@@ -4,21 +4,63 @@ body {
 }
 
 nav {
-    background-color: #fdcaee;
+    background-color: #2854cc;
     display: flex;
     justify-content: center;
 }
 
 nav a {
-    color: #f584d3;
+    color: #212c97;
     text-decoration: none;
     padding: 15px 25px;
 }
 
 nav a:hover {
-    background-color: #f584d3
+    background-color: #212c97
 }
 
 h1 {
-    color: #f584d3
+    color: #212c97
+}
+/* Bakgrundsbild på Hem */
+.hem {
+    color: rgb(114, 138, 245);
+    background-image: url("bilder/hem.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}  
+
+
+
+/* Bakgrundsbild på Matte */
+.matte {
+    color:rgb(114, 138, 245);
+    background-image: url("bilder/matte.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+/* Bakgrundsbild på Svenska */
+.svenska {
+    color:rgb(114, 138,  245);
+    background-image: url("bilder/svenska.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Bakgrundsbild på Andra ämnen */
+.andra {
+    color:rgb(114, 138,  245);
+    background-image: url("bilder/andra.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }

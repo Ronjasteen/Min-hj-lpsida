@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Elunéa</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #01050d;
+
+            font-family: Georgia, serif;
+        }
+
+
+        /* HUVUDLOGGAN */
+
+        .profil {
+            width: 560px;
+            height: 560px;
+
+            border-radius: 50%;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 65% 35%,
+                    #123d83 0%,
+                    #071c43 25%,
+                    #020914 65%,
+                    #00030a 100%
+                );
+
+            border: 1px solid rgba(45, 128, 255, 0.7);
+
+            box-shadow:
+                0 0 25px rgba(0, 91, 255, 0.45),
+                0 0 70px rgba(0, 65, 190, 0.35),
+                inset 0 0 70px rgba(0, 55, 150, 0.35);
+        }
+
+
+        /* BLÅ LJUSVÅG */
+
+        .ljus {
+            position: absolute;
+
+            width: 420px;
+            height: 140px;
+
+            border-radius: 50%;
+
+            border-top: 2px solid rgba(30, 120, 255, 0.7);
+
+            transform: rotate(-25deg);
+
+            filter: blur(2px);
+
+            box-shadow:
+                0 0 15px #006eff,
+                0 0 35px rgba(0, 91, 255, 0.7),
+                0 0 70px rgba(0, 70, 220, 0.4);
+
+            opacity: 0.65;
+        }
+
+        .ljus1 {
+            right: -130px;
+            top: 100px;
+        }
+
+        .ljus2 {
+            left: -160px;
+            bottom: 110px;
+
+            transform: rotate(-25deg);
+            opacity: 0.4;
+        }
+
+
+        /* STJÄRNOR */
+
+        .stjarna {
+            position: absolute;
+
+            color: #8fc5ff;
+
+            text-shadow:
+                0 0 8px #1683ff,
+                0 0 20px #0066ff;
+
+            animation: blink 3s infinite alternate;
+        }
+
+        .s1 {
+            top: 105px;
+            left: 130px;
+            font-size: 20px;
+        }
+
+        .s2 {
+            top: 155px;
+            right: 125px;
+            font-size: 12px;
+        }
+
+        .s3 {
+            bottom: 135px;
+            left: 125px;
+            font-size: 14px;
+        }
+
+        .s4 {
+            bottom: 105px;
+            right: 145px;
+            font-size: 19px;
+        }
+
+        .s5 {
+            top: 190px;
+            left: 95px;
+            font-size: 8px;
+        }
+
+        @keyframes blink {
+
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        /* BOKEN */
+
+        .bok {
+            position: relative;
+
+            width: 72px;
+            height: 48px;
+
+            margin-bottom: 25px;
+
+            filter:
+                drop-shadow(0 0 7px #0878ff)
+                drop-shadow(0 0 18px rgba(0, 100, 255, 0.8));
+        }
+
+        .bok::before,
+        .bok::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 32px;
+            height: 45px;
+
+            border: 1px solid #65aaff;
+
+            background: rgba(0, 50, 120, 0.18);
+        }
+
+        .bok::before {
+
+            left: 2px;
+
+            transform: skewY(7deg);
+
+            border-radius: 4px 0 0 4px;
+        }
+
+        .bok::after {
+
+            right: 2px;
+
+            transform: skewY(-7deg);
+
+            border-radius: 0 4px 4px 0;
+        }
+
+
+        /* ELUNÉA */
+
+        .namn {
+
+            font-size: 70px;
+
+            font-style: italic;
+
+            letter-spacing: 5px;
+
+            color: #f4f9ff;
+
+            position: relative;
+
+            text-shadow:
+
+                0 0 5px #ffffff,
+
+                0 0 12px #8ec5ff,
+
+                0 0 25px #1683ff,
+
+                0 0 45px #006eff,
+
+                0 0 75px rgba(0, 102, 255, 0.9),
+
+                0 0 110px rgba(0, 70, 255, 0.55);
+
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes glow {
+
+            from {
+                text-shadow:
+                    0 0 5px #ffffff,
+                    0 0 12px #8ec5ff,
+                    0 0 25px #1683ff,
+                    0 0 45px #006eff,
+                    0 0 70px rgba(0, 102, 255, 0.7);
+            }
+
+            to {
+                text-shadow:
+                    0 0 8px #ffffff,
+                    0 0 18px #b5d9ff,
+                    0 0 35px #1683ff,
+                    0 0 60px #006eff,
+                    0 0 100px rgba(0, 102, 255, 0.9);
+            }
+        }
+
+
+        /* LINJE */
+
+        .linje {
+
+            width: 130px;
+            height: 1px;
+
+            margin-top: 23px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #4ba0ff,
+                    #ffffff,
+                    #4ba0ff,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 10px #0077ff,
+                0 0 25px #0066ff;
+        }
+
+
+        /* UNDERTEXT */
+
+        .text {
+
+            margin-top: 17px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 6px;
+
+            color: #8fc5ff;
+
+            text-shadow:
+                0 0 10px #006eff;
+        }
+
+.small {
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #629bd8;
+    text-shadow: 0 0 10px #006eff;
+}
+        /* SMÅ PRICKAR */
+
+        .punkt {
+
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: #b8dcff;
+
+            box-shadow:
+                0 0 8px #1683ff,
+                0 0 18px #006eff;
+        }
+
+        .p1 {
+            top: 125px;
+            right: 185px;
+        }
+
+        .p2 {
+            top: 240px;
+            left: 105px;
+        }
+
+        .p3 {
+            bottom: 185px;
+            right: 105px;
+        }
+
+        .p4 {
+            bottom: 130px;
+            left: 185px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="profil">
+
+        <!-- Blå ljusvågor -->
+        <div class="ljus ljus1"></div>
+        <div class="ljus ljus2"></div>
+
+        <!-- Stjärnor -->
+        <div class="stjarna s1">✦</div>
+        <div class="stjarna s2">✧</div>
+        <div class="stjarna s3">✦</div>
+        <div class="stjarna s4">✧</div>
+        <div class="stjarna s5">·</div>
+
+        <!-- Små ljuspunkter -->
+        <div class="punkt p1"></div>
+        <div class="punkt p2"></div>
+        <div class="punkt p3"></div>
+        <div class="punkt p4"></div>
+
+        <!-- Bok -->
+        <div class="bok"></div>
+
+        <!-- Namn -->
+        <div class="namn">
+            Elunéa
+        </div>
+
+        <!-- Ljuslinje -->
+        <div class="linje"></div>
+
+        <!-- Undertitel -->
+        <div class="text">
+    STUDY • FOCUS
+</div>
+
+<div class="small">
+    PLAN • LEARN • GROW
+</div>
+
+    </div>
+
+</body>
+</html>
